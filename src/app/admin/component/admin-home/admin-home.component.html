@@ -1,0 +1,16 @@
+
+<app-admin-header></app-admin-header>
+
+<!-- Full height wrapper -->
+<div class="main-content pt-16 flex h-screen overflow-hidden">
+
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Scrollable content area -->
+  <div class="flex-1 p-4 sm:ml-64 bg-white overflow-y-auto">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg h-full">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
