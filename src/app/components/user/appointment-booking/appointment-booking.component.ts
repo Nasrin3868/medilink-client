@@ -87,7 +87,7 @@ export class AppointmentBookingComponent implements OnInit{
   })
 
   payment_form_submit(){
-    this._userService.check_if_the_slot_available({slotId:this.slotId}).subscribe({
+    this._userService.checkIfTheSlotAvailable({slotId:this.slotId}).subscribe({
       next:(Response)=>{
         if(this.payment_form.value.payment_method==='online_payment'){
           this.onlinePayment()
@@ -106,7 +106,7 @@ export class AppointmentBookingComponent implements OnInit{
   onlinePayment(){
     this.isDisable=true
     const slot_id = this.slotDetails._id;
-    this._userService.booking_payment({consultation_fee:this.slotDetails.docId.consultation_fee}).subscribe({   // For payment 
+    this._userService.bookingPayment({consultation_fee:this.slotDetails.docId.consultation_fee}).subscribe({   // For payment 
       next:(response)=>{
         // console.log('razorpay, booking response',response);
         this.razorpayPopUp(response);

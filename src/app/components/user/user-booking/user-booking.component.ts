@@ -36,7 +36,7 @@ export class UserBookingComponent implements OnInit{
     this._userService.get_bookings_of_user({userId:localStorage.getItem('userId')}).subscribe({
 
     })
-    this._doctorService.get_bookings_of_doctor({doctorId:localStorage.getItem('doctorId')}).subscribe({
+    this._doctorService.getBookingsOfDoctor({doctorId:localStorage.getItem('doctorId')}).subscribe({
       next:(Response)=>{
         this.payments=Response
         this.payments_to_display=this.payments

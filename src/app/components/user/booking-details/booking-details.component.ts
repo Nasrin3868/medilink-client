@@ -39,7 +39,7 @@ export class BookingDetailsComponent implements OnInit{
 
   getAppointmentDetails(){
     const userId=localStorage.getItem('userId')
-    this._userService.get_booking_details_of_user({userId:userId}).subscribe({
+    this._userService.getBookingDetails_of_user({userId:userId}).subscribe({
       next:(Response)=>{
         this.appointments=Response
         this.appointments_to_display=this.appointments

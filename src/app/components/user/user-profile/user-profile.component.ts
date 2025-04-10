@@ -72,7 +72,7 @@ export class UserProfileComponent implements OnInit{
       userId:this.userId,
       image_url:this.url
     }
-    this._userService.edit_user_profile_picture(data).subscribe({
+    this._userService.editUserProfilePicture(data).subscribe({
       next:(Response)=>{
         this._showMessage.showSuccessToastr(Response.message)
       },error:(error)=>{
@@ -145,7 +145,7 @@ export class UserProfileComponent implements OnInit{
         firstName: this.name_form.value.firstName,
         lastName: this.name_form.value.lastName
       };
-      this._userService.editUserProfile_name(data).subscribe({
+      this._userService.editUserProfileName(data).subscribe({
         next: (response) => {
           console.log('Success response:', response);
           this._showMessage.showSuccessToastr(response.message);
@@ -177,7 +177,7 @@ export class UserProfileComponent implements OnInit{
         userId: this.userId,
         email: this.email_form.value.email
       };
-      this._userService.opt_for_new_email(data).subscribe({
+      this._userService.optForNewEmail(data).subscribe({
         next:(Response)=>{
           this._showMessage.showSuccessToastr(Response.message)
           if(data.email){

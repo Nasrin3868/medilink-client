@@ -6,7 +6,10 @@ export interface user{
     password:String,
     otp?:number,
     isverified?:boolean,
-    blocked?:Boolean
+    blocked?:Boolean,
+    refreshToken?:{
+        type: String
+      }
 }
 
 //message model
@@ -45,7 +48,10 @@ export interface userInfo{
     lastname:string,
     email:string,
     role:string,
-    wallet?:Number
+    wallet?:Number,
+    refreshToken?:{
+        type: String
+      }
 }
 
 //getting data when login success

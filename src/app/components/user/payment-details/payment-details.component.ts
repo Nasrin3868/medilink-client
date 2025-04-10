@@ -32,7 +32,7 @@ export class PaymentDetailsComponent {
   }
 
   getAppointmentDetails(){
-    this._userService.get_booking_details_of_user({userId:localStorage.getItem('userId')}).subscribe({
+    this._userService.getBookingDetails_of_user({userId:localStorage.getItem('userId')}).subscribe({
       next:(Response)=>{
         this.payments=Response
         this.payments_to_display=this.payments

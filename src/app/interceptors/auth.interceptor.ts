@@ -25,8 +25,9 @@ export class AuthInterceptor implements HttpInterceptor {
     }
     const userToken = this._commonService.getTokenFromLocalStorage(); // User token from local storage
     const doctorToken = this._commonService.getDoctorTokenFromLocalStorage(); // Doctor token from local storage
-    // const adminToken = this._commonService.getAdminTokenFromLocalStorage(); // Admin token from local storage
-
+    const adminToken = this._commonService.getAdminTokenFromLocalStorage(); // Admin token from local storage
+    console.log('AdminToken in interceptor:',adminToken);
+    
     let authRequest = request;
     if(window.location.pathname.includes('/user') && userToken) {
       authRequest = request.clone({
@@ -42,11 +43,13 @@ export class AuthInterceptor implements HttpInterceptor {
           Authorization: `doctor-Bearer ${doctorToken}`
         }
       });
-    } else if (window.location.pathname.includes('/admin') && this.adminToken) {
+    } else if (window.location.pathname.includes('/admin') && adminToken) {
+      console.log('checking admin token interceptor frontend');
+      
       authRequest = request.clone({
         setHeaders: {
           'Content-Type': 'application/json',
-          Authorization: `admin-Bearer ${this.adminToken}`
+          Authorization: `admin-Bearer ${adminToken}`
         }
       });
     }
@@ -61,7 +64,9 @@ export class AuthInterceptor implements HttpInterceptor {
             localStorage.removeItem('userToken')
           } else if (window.location.pathname.includes('/doctor')) {
             localStorage.removeItem('doctorToken')
-          } 
+          } else if (window.location.pathname.includes('/admin')) {
+            localStorage.removeItem('adminToken');
+          }
 
           console.log('403 Forbidden - Redirecting to home page');
           this._router.navigate(['/home']); // Navigate to the home page or desired route
