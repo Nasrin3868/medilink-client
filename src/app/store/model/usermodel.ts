@@ -52,6 +52,17 @@ export interface userInfo{
     refreshToken?:{
         type: String
       }
+      
+      firstName?: string;
+      lastName?: string;
+      password?: string;
+      otp?: number;
+      otp_update_time?: string;
+      is_verified?: string;
+      blocked?: string;
+      created_time?: string;
+      profile_picture?: string;
+      __v?: number;
 }
 
 //getting data when login success

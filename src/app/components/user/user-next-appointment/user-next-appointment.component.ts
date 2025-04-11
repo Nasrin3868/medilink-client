@@ -10,9 +10,9 @@ import { UserserviceService } from 'src/app/services/userservice.service';
 })
 export class UserNextAppointmentComponent implements OnInit{
 
-  roomId!:any
+  roomId!:string
   slotDetails:any=''
-  link!:any
+  link!:string
   disable=false
   noAppointmnet=false
   constructor(

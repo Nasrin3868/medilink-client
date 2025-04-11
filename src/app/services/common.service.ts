@@ -51,11 +51,5 @@ export class CommonService {
   getAdminTokenFromLocalStorage():string{
     return localStorage.getItem('adminToken') as string
   }
-  refreshAccessToken() {
-    // (`${this._api}/doctor/prescriptionDetails`, 
-    return this._http.get<{ accessToken: string }>(`${this._api}/user/refresh-token`, {
-      withCredentials: true // allows cookies to be sent
-    });
-  }
 
 }

@@ -165,5 +165,14 @@ export class UserserviceService {
     const httpParams = new HttpParams({ fromObject: data })
     return this._http.get<any>(`${this._api}/user/prescriptionDetails`, { params: httpParams })
   }
+  // refreshAccessTokenUser() {
+  //   // (`${this._api}/doctor/prescriptionDetails`, 
+  //   return this._http.get<{ accessToken: string }>(`${this._api}/user/refresh-token`, {
+  //     withCredentials: true // allows cookies to be sent
+  //   });
+  // }
+  // logOut(){
+  //   return this._http.post(`${this._api}/user/logout`, {}, { withCredentials: true });
+  // }
 
 }

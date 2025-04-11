@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageToasterService } from 'src/app/services/message-toaster.service';
 import { UserserviceService } from 'src/app/services/userservice.service';
+import { SlotModelPopulate } from 'src/app/store/model/commonModel';
 
 declare var Razorpay:any;
 
@@ -14,14 +15,14 @@ declare var Razorpay:any;
 
 export class AppointmentBookingComponent implements OnInit{
   
-  slotId!:any
+  slotId!:string
   slotDetails!:any
   visible: boolean = false;
   namePattern = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*\s*$/;
   agePattern=/^(?:[1-9][0-9]?|10[0-9])$/;
   isDisable=true
   patient_details!:any
-  userId=localStorage.getItem('userId')
+  userId=localStorage.getItem('userId')||''
 
   constructor(
     private _userService:UserserviceService,
@@ -31,7 +32,7 @@ export class AppointmentBookingComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-    this.slotId=localStorage.getItem('slotId')
+    this.slotId=localStorage.getItem('slotId')||''
     console.log('slotId from localStorage:',this.slotId)
     this._userService.getSlot({slotId:this.slotId}).subscribe({
       next:(Response)=>{
@@ -158,7 +159,7 @@ export class AppointmentBookingComponent implements OnInit{
     // }, 1 * 60 * 1000); 
   }
 
-  paymentSuccess(options:any){
+  paymentSuccess(options:string){
     console.log('payment success func');
     
     this.patient_details.payment_method='online_payment'
