@@ -15,7 +15,7 @@
                     
                     <h4 class="text-xl font-bold text-slate-700 mb-4 pb-2 border-b border-gray-200">Personal Details</h4>
                     
-                    <div class="grid md:grid-cols-2 md:gap-8">
+                    <div class="grid md:grid-cols-2 gap-x-8">
                         
                         <div class="mb-5">
                             <label for="first_name" class="block mb-2 text-sm font-semibold text-gray-700">Your firstname</label>
@@ -76,7 +76,7 @@
 
                     <h4 class="text-xl font-bold text-slate-700 mb-4 pb-2 border-b border-gray-200">Professional Details</h4>
 
-                    <div class="grid md:grid-cols-2 md:gap-8">
+                    <div class="grid md:grid-cols-2 gap-x-8">
                         
                         <div class="mb-5">
                             <label for="specialization" class="block mb-2 text-sm font-semibold text-gray-700">Select your specialization</label>
@@ -120,7 +120,7 @@
 
                         <div class="mb-5">
                             <label for="experience" class="block mb-2 text-sm font-semibold text-gray-700">Your experience (Years)</label>
-                            <input type="text" id="experience" formControlName="experience" 
+                            <input type="number" id="experience" formControlName="experience" 
                                 class="w-full p-3 border border-gray-300 rounded-xl focus:ring-red-500 focus:border-red-500 shadow-sm transition" placeholder="e.g., 5" required 
                                 [ngClass]="{ 'border-red-500': registration_form.get('experience')?.touched && registration_form.get('experience')?.invalid }" />
                             <div *ngIf="registration_form.get('experience')?.touched && registration_form.get('experience')?.invalid" class="text-red-600 text-xs mt-1">
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                         
-                        <div class="mb-5 col-span-2">
+                        <div class="mb-5 md:col-span-2">
                             <label for="consultation_fee" class="block mb-2 text-sm font-semibold text-gray-700">Your consultation fee (₹)</label>
                             <input type="number" id="consultation_fee" formControlName="consultation_fee" 
                                 class="w-full p-3 border border-gray-300 rounded-xl focus:ring-red-500 focus:border-red-500 shadow-sm transition" placeholder="e.g., 500" required 
@@ -143,7 +143,7 @@
 
                     <h4 class="text-xl font-bold text-slate-700 mb-4 pb-2 border-b border-gray-200">Document Uploads (PDF only)</h4>
 
-                    <div class="grid md:grid-cols-2 md:gap-8">
+                    <div class="grid md:grid-cols-2 gap-x-8">
                         
                         <div class="mb-5">
                             <label class="block mb-2 text-sm font-semibold text-gray-700" for="identity_proof">Upload Identity Proof</label>
@@ -188,7 +188,7 @@
 
                     <h4 class="text-xl font-bold text-slate-700 mb-4 pb-2 border-b border-gray-200">Account Security</h4>
 
-                    <div class="grid md:grid-cols-2 md:gap-8">
+                    <div class="grid md:grid-cols-2 gap-x-8">
                         
                         <div class="mb-5">
                             <label for="password" class="block mb-2 text-sm font-semibold text-gray-700">Your password</label>
