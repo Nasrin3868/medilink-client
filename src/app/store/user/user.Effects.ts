@@ -42,7 +42,7 @@ export class usereffects {
                             localStorage.setItem('userToken', userdata.accessToken)
                             localStorage.setItem('userId', userdata.accessedUser._id)
                             console.log('userId:', localStorage.getItem('userId'))
-                            this.showMessage.showSuccessToastr(userdata.message)
+                            // this.showMessage.showSuccessToastr(userdata.message)
                             this.router.navigate(['/user/userHome'])  //page after login--->correct it
                             return loginUserSuccess({ data: userdata.accessedUser })
                         } else {
