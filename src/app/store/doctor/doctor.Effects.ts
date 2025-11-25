@@ -50,7 +50,7 @@ export class doctorEffects implements OnInit{
                     }),
                     catchError((error)=>{
                         console.log('error.error.message:',error.error.message)
-                        this.showMessage.showErrorToastr(error.error.message)
+                        // this.showMessage.showErrorToastr(error.error.message)
                         return of(error.message)
                     })
                 )
